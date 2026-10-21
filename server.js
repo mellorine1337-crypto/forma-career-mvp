@@ -115,6 +115,7 @@ app.post('/api/public/:slug/responses', (req, res) => {
   res.status(201).json({ successMessage: form.successMessage });
 });
 
+app.get('/', (req, res) => res.redirect('/admin'));
 app.get('/admin', (req, res) => res.sendFile(path.join(__dirname, 'public', 'admin.html')));
 app.get('/f/:slug', (req, res) => res.sendFile(path.join(__dirname, 'public', 'form.html')));
 app.use((req, res) => res.status(404).sendFile(path.join(__dirname, 'public', '404.html')));
